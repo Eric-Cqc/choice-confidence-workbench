@@ -1,5 +1,7 @@
 # Choice Confidence Workbench · 置信度工作台
 
+[![GitHub stars](https://img.shields.io/github/stars/Eric-Cqc/choice-confidence-workbench?style=flat)](https://github.com/Eric-Cqc/choice-confidence-workbench/stargazers) · [反馈问题](https://github.com/Eric-Cqc/choice-confidence-workbench/issues/new/choose) · [查看全部作品](https://github.com/Eric-Cqc)
+
 **导入一批分类概率，查看门槛改变后哪些记录需要人工复核，以及已知错误发生在哪里。**
 
 一个离线结果分析工具，面向评估 AI 分类输出的人。提供中文网页和命令行入口，支持逐条检查、探索/留出集分离、报告导出及项目恢复。不调用模型，也不把 confidence 当成真实正确率。
@@ -50,3 +52,9 @@ python3 tests/revision.py
 2026-10-18 对本次公开副本重跑：26 项核心测试、9 项文件流程检查、6 项修订检查通过。另已在浏览器验证样例载入及 0.8 → 0.9 门槛变化，结果与 CLI 一致。浏览器文件导入/导出、手机排版、真实模型推理及真实业务校准尚未核验。
 
 版本 1.0.1。公式与格式参考：[TypeSafe Confidence](https://docs.typesafe.ai/confidence)、[TypeSafe API](https://docs.typesafe.ai/api)。这是独立分析工具，不是 TypeSafe 官方产品；`official-format.json` 是格式示例，不是本工具发起真实调用的结果。
+
+## 使用、反馈与关注
+
+如果这个项目对你有帮助，欢迎点击仓库右上角 **Star**；想跟进版本更新，可用 **Watch → Custom → Releases**。遇到问题请提交复现步骤、预期与实际结果；也欢迎分享希望解决的业务问题。请只使用合成或已脱敏示例，不提交密钥、个人信息或真实客户资料。
+
+查看 [参与说明](CONTRIBUTING.md)。
