@@ -1,0 +1,174 @@
+{
+  "title": "客服意图分流 · 手工构造的概率与标签",
+  "provenance": "synthetic",
+  "rows": [
+    {
+      "id": "E01",
+      "question_id": "客服意图",
+      "probabilities": {
+        "查件": 0.94,
+        "催件": 0.04,
+        "其他": 0.02
+      },
+      "label": "查件",
+      "note": "直接查询物流轨迹",
+      "split": "explore"
+    },
+    {
+      "id": "E02",
+      "question_id": "客服意图",
+      "probabilities": {
+        "查件": 0.03,
+        "催件": 0.92,
+        "其他": 0.05
+      },
+      "label": "催件",
+      "note": "询问超时包裹",
+      "split": "explore"
+    },
+    {
+      "id": "E03",
+      "question_id": "客服意图",
+      "probabilities": {
+        "查件": 0.04,
+        "催件": 0.06,
+        "其他": 0.9
+      },
+      "label": "查件",
+      "note": "高把握选错的构造反例",
+      "split": "explore"
+    },
+    {
+      "id": "E04",
+      "question_id": "客服意图",
+      "probabilities": {
+        "查件": 0.88,
+        "催件": 0.08,
+        "其他": 0.04
+      },
+      "label": "查件",
+      "note": "信息明确",
+      "split": "explore"
+    },
+    {
+      "id": "E05",
+      "question_id": "客服意图",
+      "probabilities": {
+        "查件": 0.1,
+        "催件": 0.8,
+        "其他": 0.1
+      },
+      "label": "催件",
+      "note": "门槛边界附近",
+      "split": "explore"
+    },
+    {
+      "id": "E06",
+      "question_id": "客服意图",
+      "probabilities": {
+        "查件": 0.12,
+        "催件": 0.16,
+        "其他": 0.72
+      },
+      "label": "其他",
+      "note": "需要澄清",
+      "split": "explore"
+    },
+    {
+      "id": "E07",
+      "question_id": "客服意图",
+      "probabilities": {
+        "查件": 0.6,
+        "催件": 0.3,
+        "其他": 0.1
+      },
+      "label": "查件",
+      "note": "概率与confidence区别",
+      "split": "explore"
+    },
+    {
+      "id": "E08",
+      "question_id": "客服意图",
+      "probabilities": {
+        "查件": 0.25,
+        "催件": 0.55,
+        "其他": 0.2
+      },
+      "label": "其他",
+      "note": "类别重叠",
+      "split": "explore"
+    },
+    {
+      "id": "E09",
+      "question_id": "客服意图",
+      "probabilities": {
+        "查件": 0.5,
+        "催件": 0.5,
+        "其他": 0
+      },
+      "label": "催件",
+      "note": "并列最高值",
+      "split": "explore"
+    },
+    {
+      "id": "E10",
+      "question_id": "客服意图",
+      "probabilities": {
+        "查件": 0.34,
+        "催件": 0.33,
+        "其他": 0.33
+      },
+      "label": null,
+      "note": "未标注",
+      "split": "explore"
+    },
+    {
+      "id": "H01",
+      "question_id": "客服意图",
+      "probabilities": {
+        "查件": 0.96,
+        "催件": 0.03,
+        "其他": 0.01
+      },
+      "label": "查件",
+      "note": "留出构造记录",
+      "split": "holdout"
+    },
+    {
+      "id": "H02",
+      "question_id": "客服意图",
+      "probabilities": {
+        "查件": 0.02,
+        "催件": 0.91,
+        "其他": 0.07
+      },
+      "label": "其他",
+      "note": "留出构造反例",
+      "split": "holdout"
+    },
+    {
+      "id": "H03",
+      "question_id": "客服意图",
+      "probabilities": {
+        "查件": 0.25,
+        "催件": 0.25,
+        "其他": 0.5
+      },
+      "label": "其他",
+      "note": "留出构造记录",
+      "split": "holdout"
+    },
+    {
+      "id": "H04",
+      "question_id": "客服意图",
+      "probabilities": {
+        "查件": 0.05,
+        "催件": 0.05,
+        "其他": 0.9
+      },
+      "label": null,
+      "note": "留出缺标签",
+      "split": "holdout"
+    }
+  ]
+}

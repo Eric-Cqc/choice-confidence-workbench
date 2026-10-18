@@ -1,0 +1,11 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "department": {
+      "type": "choice",
+      "choice": "billing",
+      "probabilities": {"billing": 0.88, "technical": 0.12, "sales": 0.0},
+      "confidence": 0.81
+    }
+  }
+}
