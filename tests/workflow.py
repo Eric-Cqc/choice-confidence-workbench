@@ -57,8 +57,16 @@ with tempfile.TemporaryDirectory(prefix='choice-acceptance-') as tmp:
     run('--input', multi, '--group', '2', '--out', tmp / 'selected')
     assert json.loads((tmp / 'selected/results.json').read_text())['exploration']['rows'][0]['id'] == 'y'
     checks.append('混合问题拒绝汇总；显式选组只含选中问题')
+    run('--input', tmp / 'selected/project.json', '--out', tmp / 'selected-reopened')
+    restored = json.loads((tmp / 'selected-reopened/results.json').read_text())['exploration']
+    assert [r['id'] for r in restored['rows']] == ['y']
+    run('--input', tmp / 'selected/project.json', '--group', '1', '--out', tmp / 'selected-override')
+    overridden = json.loads((tmp / 'selected-override/results.json').read_text())['exploration']
+    assert [r['id'] for r in overridden['rows']] == ['x']
+    checks.append('多问题项目恢复已保存的问题组；显式 --group 可覆盖')
     assert hashlib.sha256(source.read_bytes()).hexdigest() == original
     checks.append('源输入未修改')
 
 print(json.dumps({'status':'passed','entry':'node choice.js','checks':checks,
                   'not_verified':['真实浏览器交互','手机布局','真实Jev推理','真实业务校准']},ensure_ascii=False,indent=2))
+

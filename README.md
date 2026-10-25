@@ -26,7 +26,7 @@ node choice.js --input my-result/project.json --threshold 0.9 --out my-next-resu
 node choice.js --input my-result/project.json --threshold 0.8 --holdout --out my-holdout-result
 ```
 
-输出包括 `report.md`、`results.json` 和可恢复的 `project.json`。输出目录必须不存在，父目录必须已存在；已有结果不会被覆盖。多问题输入先用 `--list` 列出，再用 `--group 1` 选择；`--metric top` 可按最高概率筛选。
+输出包括 `report.md`、`results.json` 和可恢复的 `project.json`。输出目录必须不存在，父目录必须已存在；已有结果不会被覆盖。多问题输入先用 `--list` 列出，再用 `--group 1` 选择；再次打开 `project.json` 会恢复已保存的问题组，显式 `--group` 可覆盖。`--metric top` 可按最高概率筛选。
 
 ## 输入与解释
 
@@ -58,3 +58,4 @@ python3 tests/revision.py
 如果这个项目对你有帮助，欢迎点击仓库右上角 **Star**；想跟进版本更新，可用 **Watch → Custom → Releases**。遇到问题请提交复现步骤、预期与实际结果；也欢迎分享希望解决的业务问题。请只使用合成或已脱敏示例，不提交密钥、个人信息或真实客户资料。
 
 查看 [参与说明](CONTRIBUTING.md)。
+
