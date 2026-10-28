@@ -1,4 +1,6 @@
 # Choice Confidence Workbench · 置信度工作台
+See what each confidence rule releases, holds, or marks wrong — offline. → [Pages demo](https://eric-cqc.github.io/choice-confidence-workbench/dist/Choice-Workbench.html)
+
 
 [![GitHub stars](https://img.shields.io/github/stars/Eric-Cqc/choice-confidence-workbench?style=flat)](https://github.com/Eric-Cqc/choice-confidence-workbench/stargazers) · [反馈问题](https://github.com/Eric-Cqc/choice-confidence-workbench/issues/new/choose) · [查看全部作品](https://github.com/Eric-Cqc)
 
