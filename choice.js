@@ -13,7 +13,7 @@ const help = `Choice Workbench ${C.VERSION} — 离线 Choice 结果分析
 选项：
   --input FILE         去敏后的 Choice / answers / rows JSON（最大 5 MiB）
   --list               只列出问题组，不写文件
-  --group NUMBER       选择 --list 返回的 1 起始序号，多组时必须显式选择
+  --group NUMBER       选择 --list 返回的 1 起始序号；默认恢复项目已保存的问题组
   --threshold NUMBER   门槛 0–1，默认读取项目设置，否则 0.8
   --metric METRIC      confidence 或 top；默认读取项目设置，否则 confidence
   --holdout            明确要求用当前门槛分析留出集；不自动调参
@@ -45,8 +45,9 @@ function main(args) {
   const inputSha256=crypto.createHash('sha256').update(inputBytes).digest('hex');
   const groups=[...new Set(data.rows.map(r=>r.group))];
   if(opts['--list']){console.log(JSON.stringify(groups.map((g,i)=>({group:i+1,question:JSON.parse(g)[0],options:JSON.parse(g)[1],records:data.rows.filter(r=>r.group===g).length})),null,2));return}
-  if(groups.length>1&&!opts['--group'])throw Error('存在多个问题/选项集合；先 --list，再用 --group 选择一个');
-  const idx=Number(opts['--group']??1)-1;
+  const savedGroupIndex=groups.indexOf(raw.settings?.group);
+  if(groups.length>1&&!opts['--group']&&savedGroupIndex<0)throw Error('存在多个问题/选项集合；先 --list，再用 --group 选择一个');
+  const idx=opts['--group']!==undefined?Number(opts['--group'])-1:savedGroupIndex>=0?savedGroupIndex:0;
   if(!Number.isInteger(idx)||idx<0||idx>=groups.length)throw Error('--group 超出范围');
   const threshold=Number(opts['--threshold']??raw.settings?.threshold??.8),metric=opts['--metric']??raw.settings?.metric??'confidence';
   const group=groups[idx], chosen=data.rows.filter(r=>r.group===group);
@@ -84,3 +85,4 @@ function main(args) {
   console.log(summary(exploration));console.log('报告与可恢复项目已写入：'+output);
 }
 try{main(process.argv.slice(2))}catch(e){console.error('未完成：'+e.message);process.exitCode=2}
+
